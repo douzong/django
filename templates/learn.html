@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+    <link rel="stylesheet" href="{% static 'css/style.css '%}">
+</head>
+<body>
+<div id="header_white">
+        <div id="header_white_left">1468918471@qq.com</div>
+        <div id="header_white_right">
+            <div id="header_white_right_left"></div>
+            <div id="header_white_right_right">
+                       <div id="username">{{ userid }}</div>
+                <div id="logout"><a href="/logout/"><span>注销</span></a></div>
+
+            </div>
+        </div>
+</div>
+<div id="learn_header_img">
+{#    <div id="header_white">#}
+{#        <div id="header_white_left">1468918471@qq.com</div>#}
+{#        <div id="header_white_right">#}
+{#            <div id="header_white_right_left"></div>#}
+{#            <div id="header_white_right_right">#}
+{#                       <div id="username">{{ userid }}</div>#}
+{#                <div id="logout"><a href="/logout/"><span>注销</span></a></div>#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+    <div id="header_list">
+        <div id="header_list_left">
+            <h1 class="site-title"><a href="/home/" rel="home" >Python<span>学习</span></a></h1>
+        </div>
+        <div id="header_list_right">
+            <nav>
+                <ul class="">
+                        <li ><a href="/反馈/" class="last">反馈</a></li>
+                        <li><a href="/test/">练题</a></li>
+                        <li><a href="/learn/">学习</a></li>
+                        <li><a href="/推荐/">推荐</a></li>
+                        <li><a href="/home/" >首页</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+<div id="leran_content">
+    <div id="leran_content_left">
+    <ul>
+        {% for p in pro %}
+            <div id="list"><a href="" ><span>{{ p.problem_id }}.{{ p.problem_text }}</span></a></div>
+        {% endfor %}
+    </ul>
+    </div>
+    <div id="leran_content_right">
+<iframe name="fram" src="//" frameborder="0" scrolling="no" id="test"   onload="setIframeHeight(this)" width="100%"  ></iframe>
+
+    </div>
+</div>
+</body>
+<script>
+function setIframeHeight(iframe) {
+if (iframe) {
+var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+if (iframeWin.document.body) {
+iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+}}}
+window.onload = function () {
+setIframeHeight(document.getElementById('test'));
+}
+</script>
+</html>
